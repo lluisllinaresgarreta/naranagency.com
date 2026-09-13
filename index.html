@@ -828,59 +828,59 @@ footer { padding: 0 0 64px; position: relative; z-index: 1; }
 
           <!-- ── AVATARS — rendered before center ring so they disappear "into" it ── -->
 
-          <!-- Flow 1: top · begin 0s -->
-          <g>
+          <!-- Flow 1: begin 0s -->
+          <g opacity="0">
             <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.06;0.45;0.55;1" dur="6s" repeatCount="indefinite" begin="0s"/>
             <animateMotion dur="6s" repeatCount="indefinite" begin="0s"
               keyPoints="0;0;1;1;1" keyTimes="0;0.06;0.46;0.55;1" calcMode="linear">
-              <mpath href="#ap1"/>
+              <mpath class="avatar-mpath" href="#ap1"/>
             </animateMotion>
             <circle r="22" fill="#1A1F1D" stroke="rgba(255,255,255,.14)" stroke-width="1.5"/>
-            <image href="assets/emojisenyora2.png" x="-15" y="-15" width="30" height="30"/>
+            <image class="avatar-img" href="assets/emojisenyora2.png" x="-15" y="-15" width="30" height="30"/>
           </g>
 
-          <!-- Flow 2: upper-mid · begin 1.2s -->
-          <g>
+          <!-- Flow 2: begin 1.2s -->
+          <g opacity="0">
             <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.06;0.45;0.55;1" dur="6s" repeatCount="indefinite" begin="1.2s"/>
             <animateMotion dur="6s" repeatCount="indefinite" begin="1.2s"
               keyPoints="0;0;1;1;1" keyTimes="0;0.06;0.46;0.55;1" calcMode="linear">
-              <mpath href="#ap2"/>
+              <mpath class="avatar-mpath" href="#ap2"/>
             </animateMotion>
             <circle r="19" fill="#1A1F1D" stroke="rgba(255,255,255,.12)" stroke-width="1.5"/>
-            <image href="assets/emojisenyorros.png" x="-13" y="-13" width="26" height="26"/>
+            <image class="avatar-img" href="assets/emojisenyorros.png" x="-13" y="-13" width="26" height="26"/>
           </g>
 
-          <!-- Flow 3: horizontal · begin 2.4s -->
-          <g>
+          <!-- Flow 3: begin 2.4s -->
+          <g opacity="0">
             <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.06;0.45;0.55;1" dur="6s" repeatCount="indefinite" begin="2.4s"/>
             <animateMotion dur="6s" repeatCount="indefinite" begin="2.4s"
               keyPoints="0;0;1;1;1" keyTimes="0;0.06;0.46;0.55;1" calcMode="linear">
-              <mpath href="#ap3"/>
+              <mpath class="avatar-mpath" href="#ap3"/>
             </animateMotion>
             <circle r="21" fill="#1A1F1D" stroke="rgba(255,255,255,.13)" stroke-width="1.5"/>
-            <image href="assets/emojisenyora.png" x="-14" y="-14" width="28" height="28"/>
+            <image class="avatar-img" href="assets/emojisenyora.png" x="-14" y="-14" width="28" height="28"/>
           </g>
 
-          <!-- Flow 4: lower-mid · begin 3.6s -->
-          <g>
+          <!-- Flow 4: begin 3.6s -->
+          <g opacity="0">
             <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.06;0.45;0.55;1" dur="6s" repeatCount="indefinite" begin="3.6s"/>
             <animateMotion dur="6s" repeatCount="indefinite" begin="3.6s"
               keyPoints="0;0;1;1;1" keyTimes="0;0.06;0.46;0.55;1" calcMode="linear">
-              <mpath href="#ap4"/>
+              <mpath class="avatar-mpath" href="#ap4"/>
             </animateMotion>
             <circle r="19" fill="#1A1F1D" stroke="rgba(255,255,255,.12)" stroke-width="1.5"/>
-            <image href="assets/emojinenros.png" x="-13" y="-13" width="26" height="26"/>
+            <image class="avatar-img" href="assets/emojinenros.png" x="-13" y="-13" width="26" height="26"/>
           </g>
 
-          <!-- Flow 5: bottom · begin 4.8s -->
-          <g>
+          <!-- Flow 5: begin 4.8s -->
+          <g opacity="0">
             <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.06;0.45;0.55;1" dur="6s" repeatCount="indefinite" begin="4.8s"/>
             <animateMotion dur="6s" repeatCount="indefinite" begin="4.8s"
               keyPoints="0;0;1;1;1" keyTimes="0;0.06;0.46;0.55;1" calcMode="linear">
-              <mpath href="#ap5"/>
+              <mpath class="avatar-mpath" href="#ap5"/>
             </animateMotion>
             <circle r="20" fill="#1A1F1D" stroke="rgba(255,255,255,.13)" stroke-width="1.5"/>
-            <image href="assets/emojisenyorros.png" x="-13" y="-13" width="26" height="26"/>
+            <image class="avatar-img" href="assets/emojisenyorros.png" x="-13" y="-13" width="26" height="26"/>
           </g>
 
           <!-- ── CENTER CIRCLE (above avatars — they disappear behind it) ── -->
@@ -899,7 +899,7 @@ footer { padding: 0 0 64px; position: relative; z-index: 1; }
           <!-- ── NOTIFICATIONS — rendered above everything, emerge from center ── -->
 
           <!-- Notif 1: IG · begin 0s -->
-          <g>
+          <g opacity="0">
             <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.50;0.57;0.82;1" dur="6s" repeatCount="indefinite" begin="0s"/>
             <animateMotion dur="6s" repeatCount="indefinite" begin="0s"
               keyPoints="0;0;0;1;1" keyTimes="0;0.50;0.57;0.82;1" calcMode="linear">
@@ -914,7 +914,7 @@ footer { padding: 0 0 64px; position: relative; z-index: 1; }
           </g>
 
           <!-- Notif 2: TT · begin 1.2s -->
-          <g>
+          <g opacity="0">
             <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.50;0.57;0.82;1" dur="6s" repeatCount="indefinite" begin="1.2s"/>
             <animateMotion dur="6s" repeatCount="indefinite" begin="1.2s"
               keyPoints="0;0;0;1;1" keyTimes="0;0.50;0.57;0.82;1" calcMode="linear">
@@ -929,7 +929,7 @@ footer { padding: 0 0 64px; position: relative; z-index: 1; }
           </g>
 
           <!-- Notif 3: IG · begin 2.4s -->
-          <g>
+          <g opacity="0">
             <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.50;0.57;0.82;1" dur="6s" repeatCount="indefinite" begin="2.4s"/>
             <animateMotion dur="6s" repeatCount="indefinite" begin="2.4s"
               keyPoints="0;0;0;1;1" keyTimes="0;0.50;0.57;0.82;1" calcMode="linear">
@@ -944,7 +944,7 @@ footer { padding: 0 0 64px; position: relative; z-index: 1; }
           </g>
 
           <!-- Notif 4: TT · begin 3.6s -->
-          <g>
+          <g opacity="0">
             <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.50;0.57;0.82;1" dur="6s" repeatCount="indefinite" begin="3.6s"/>
             <animateMotion dur="6s" repeatCount="indefinite" begin="3.6s"
               keyPoints="0;0;0;1;1" keyTimes="0;0.50;0.57;0.82;1" calcMode="linear">
@@ -959,7 +959,7 @@ footer { padding: 0 0 64px; position: relative; z-index: 1; }
           </g>
 
           <!-- Notif 5: IG · begin 4.8s -->
-          <g>
+          <g opacity="0">
             <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.50;0.57;0.82;1" dur="6s" repeatCount="indefinite" begin="4.8s"/>
             <animateMotion dur="6s" repeatCount="indefinite" begin="4.8s"
               keyPoints="0;0;0;1;1" keyTimes="0;0.50;0.57;0.82;1" calcMode="linear">
@@ -1215,6 +1215,51 @@ footer { padding: 0 0 64px; position: relative; z-index: 1; }
     if (g2) g2.style.transform = 'translateY(' + (y * -0.07) + 'px)';
   }, { passive: true });
 
+}());
+</script>
+
+<script>
+(function () {
+  const emojis = [
+    'assets/emojisenyora2.png',
+    'assets/emojisenyorros.png',
+    'assets/emojisenyora.png',
+    'assets/emojinenros.png',
+  ];
+  const pathIds = ['#ap1', '#ap2', '#ap3', '#ap4', '#ap5'];
+  const delays  = [0, 1.2, 2.4, 3.6, 4.8]; // segundos, uno por flow
+  const CYCLE   = 6000; // ms
+
+  function rand(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+  function shuffle(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const imgs   = document.querySelectorAll('.avatar-img');
+    const mpaths = document.querySelectorAll('.avatar-mpath');
+
+    // Caminos aleatorios al cargar la página (shuffle único de ap1-ap5)
+    shuffle(pathIds).forEach((p, i) => mpaths[i].setAttribute('href', p));
+
+    // Emoji aleatorio inicial para cada flow
+    imgs.forEach(img => img.setAttribute('href', rand(emojis)));
+
+    // Cada 6 s (un ciclo completo), actualiza el emoji de ese flow
+    imgs.forEach(function (img, i) {
+      function update() {
+        img.setAttribute('href', rand(emojis));
+        setTimeout(update, CYCLE);
+      }
+      setTimeout(update, delays[i] * 1000 + CYCLE);
+    });
+  });
 }());
 </script>
 </body>
