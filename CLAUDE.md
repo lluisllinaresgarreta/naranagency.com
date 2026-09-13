@@ -61,12 +61,6 @@ gh pr create --title "título" --body "descripción"
 
 Netlify genera una **preview URL** automática para cada PR — úsala para revisar antes de aprobar.
 
-## Regla anti-conflictos
-
-Este proyecto tiene un único archivo (`index.html`). Para evitar conflictos:
-- **No trabajar en la misma sección al mismo tiempo** — coordinaos antes de empezar
-- **PRs de vida corta** — crear, revisar y mergear el mismo día si es posible
-- **Una tarea por rama** — nunca acumules múltiples cambios no relacionados en una sola rama
 
 ## Reglas de código
 
