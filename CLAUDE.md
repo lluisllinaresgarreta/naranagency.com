@@ -33,26 +33,34 @@ naranagency/
 ## Workflow obligatorio — leer antes de tocar código
 
 La rama `main` está **protegida**. Nunca se hace push directo a main.
+GitHub bloquea el merge si la rama no está actualizada con main — siempre hay que sincronizar antes de crear el PR.
 
 ```
-# 1. Crear rama para el cambio
+# 1. Partir siempre del main más reciente
+git checkout main
+git pull origin main
 git checkout -b feature/nombre-descriptivo
 
 # 2. Hacer los cambios en index.html (o assets/)
 
 # 3. Probar en local abriendo index.html en el navegador
 
-# 4. Subir la rama y crear PR
+# 4. Antes de crear el PR, sincronizar con main por si alguien mergeó algo
+git fetch origin
+git merge origin/main   # si hay cambios nuevos, los incorpora
+
+# 5. Subir la rama y crear PR
 git add .
 git commit -m "descripción del cambio"
 git push origin feature/nombre-descriptivo
 gh pr create --title "título" --body "descripción"
 
-# 5. El PR necesita 1 aprobación antes de mergear
-# 6. Al mergear a main → Netlify despliega automáticamente
+# 6. El PR necesita 1 aprobación antes de mergear
+# 7. Al mergear a main → Netlify despliega automáticamente
 ```
 
 Netlify genera una **preview URL** automática para cada PR — úsala para revisar antes de aprobar.
+
 
 ## Reglas de código
 
