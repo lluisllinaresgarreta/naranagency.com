@@ -1,4 +1,5 @@
 # NARAN Agency — Instrucciones para Claude Code
+<!-- PR de prueba para mostrar el flujo de trabajo al colaborador -->
 
 ## Qué es este proyecto
 
