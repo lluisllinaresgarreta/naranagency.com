@@ -70,17 +70,6 @@ a { color: inherit; }
 ::-webkit-scrollbar-thumb { background: rgba(0,201,167,.3); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: rgba(0,201,167,.55); }
 
-/* ── ambient glow blobs ── */
-.glow {
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(110px);
-  pointer-events: none;
-  z-index: 0;
-  will-change: transform;
-}
-.glow-1 { width: 480px; height: 480px; background: radial-gradient(circle, rgba(0,201,167,.14), transparent 70%); top: -160px; left: 8%; }
-.glow-2 { width: 420px; height: 420px; background: radial-gradient(circle, rgba(0,201,167,.10), transparent 70%); top: 55vh; right: -80px; }
 
 .shell {
   max-width: 1180px;
@@ -739,10 +728,6 @@ footer { padding: 0 0 64px; position: relative; z-index: 1; }
 @media (max-width: 640px) { .foot-bar { flex-direction: column; text-align: center; } }
 </style>
 
-<!-- ambient glows -->
-<div class="glow glow-1" id="g1"></div>
-<div class="glow glow-2" id="g2"></div>
-
 <!-- ── NAV ── -->
 <div class="navwrap">
   <nav class="nav glass" id="nav">
@@ -1189,15 +1174,6 @@ footer { padding: 0 0 64px; position: relative; z-index: 1; }
       btn.closest('.faq-item').classList.toggle('open');
     });
   });
-
-  /* ── parallax suave en los glows ── */
-  var g1 = document.getElementById('g1');
-  var g2 = document.getElementById('g2');
-  window.addEventListener('scroll', function () {
-    var y = window.scrollY;
-    if (g1) g1.style.transform = 'translateY(' + (y * 0.12) + 'px)';
-    if (g2) g2.style.transform = 'translateY(' + (y * -0.07) + 'px)';
-  }, { passive: true });
 
 }());
 </script>
