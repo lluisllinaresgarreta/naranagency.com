@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Media Management — NARAN</title>
+  <meta name="description" content="Gestión y producción de contenido para redes sociales: calendario, guion, dirección creativa y publicación bajo una misma estrategia.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    window.op=window.op||function(){var n=[];return new Proxy(function(){arguments.length&&n.push([].slice.call(arguments))},{get:function(t,r){return"q"===r?n:function(){n.push([r].concat([].slice.call(arguments)))}} ,has:function(t,r){return"q"===r}}) }();
+    window.op('init', {
+      clientId: '9a602c1d-88fe-4890-8d77-09cd3c6606c5',
+      trackScreenViews: true,
+      trackOutgoingLinks: true,
+      trackAttributes: true,
+    });
+  </script>
+  <script src="https://openpanel.dev/op1.js" defer async></script>
+<style>
+
+:root {
+  --bg:           #07090A;
+  --glass:        rgba(255,255,255,.05);
+  --glass-strong: rgba(255,255,255,.09);
+  --glass-border: rgba(255,255,255,.10);
+  --ink:          #F5F7F6;
+  --ink-dim:      #9AA8A3;
+  --ink-faint:    #59655F;
+  --accent:       #00C9A7;
+  --accent-soft:  rgba(0,201,167,.16);
+  --pending:      #E8B84B;
+  --pending-soft: rgba(232,184,75,.12);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', ui-sans-serif, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -.01em;
+}
+h1,h2,h3,h4 { letter-spacing: -.02em; }
+.mono { font-family: 'IBM Plex Mono', ui-monospace, monospace; }
+::selection { background: var(--accent); color: #04120F; }
+a { color: inherit; }
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0,201,167,.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,201,167,.55); }
+
+.shell { max-width: 1180px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px); position: relative; z-index: 1; }
+.glass { background: #0B0E0D; border: 1px solid var(--glass-border); border-radius: 20px; }
+
+/* ── nav ── */
+.navwrap { position: sticky; top: 16px; z-index: 50; display: flex; justify-content: center; padding: 0 20px; }
+.nav {
+  width: 100%; max-width: 640px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 9px 10px 9px 18px; gap: 10px; border-radius: 100px;
+  background: rgba(7,9,10,.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-color: rgba(255,255,255,.15); box-shadow: 0 8px 32px rgba(0,0,0,.5);
+}
+.nav .logo { font-size: 14px; font-weight: 800; letter-spacing: .05em; text-decoration:none; color:var(--ink); }
+.nav .links { display: flex; gap: 18px; font-size: 12.5px; color: var(--ink-dim); }
+.nav .links a { text-decoration: none; transition: color .2s; }
+.nav .links a:hover, .nav .links a.active { color: var(--ink); }
+.nav .links a.active { color: var(--accent); }
+.nav .cta {
+  background: var(--accent); color: #04120F; font-size: 12px; font-weight: 700;
+  padding: 8px 16px; border-radius: 100px; text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease;
+  animation: pulseGlow 2.6s ease-in-out infinite;
+}
+.nav .cta:hover { transform: scale(1.05); box-shadow: 0 0 28px rgba(0,201,167,.6); animation-play-state: paused; }
+@media (max-width: 640px) { .nav .links { display: none; } }
+@keyframes pulseGlow {
+  0%,100% { box-shadow: 0 0 22px rgba(0,201,167,.35), 0 0 50px rgba(0,201,167,.14); }
+  50%      { box-shadow: 0 0 34px rgba(0,201,167,.55), 0 0 80px rgba(0,201,167,.26); }
+}
+
+/* ── footer ── */
+footer { padding: 0 0 64px; position: relative; z-index: 1; }
+.foot-bar {
+  padding: 22px clamp(20px,4vw,40px); border-radius: 100px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+}
+.foot-copy { font-size: 13px; color: var(--ink-dim); white-space: nowrap; }
+.foot-logo { font-size: 26px; font-weight: 800; letter-spacing: .05em; }
+.foot-social { display: flex; gap: 10px; }
+.foot-social a {
+  width: 38px; height: 38px; border-radius: 11px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,.06); border: 1px solid var(--glass-border);
+  color: var(--ink); text-decoration: none; font-size: 14px;
+  transition: color .2s, border-color .2s, background .2s, transform .2s cubic-bezier(.16,1,.3,1);
+}
+.foot-social a:hover { color: var(--accent); border-color: rgba(0,201,167,.35); transform: translateY(-2px); }
+.foot-policies { text-align: center; margin-top: 22px; margin-bottom: 12px; font-size: 12.5px; color: var(--ink-faint); }
+.foot-policies a { color: var(--ink-dim); text-decoration: underline; }
+.foot-policies .sep { margin: 0 10px; }
+@media (max-width: 640px) { .foot-bar { flex-direction: column; text-align: center; } }
+
+  .svc-shell{max-width:920px; margin-inline:auto; padding-inline:24px;}
+  .svc-page{padding-block:56px 96px;}
+
+  .svc-eyebrow{
+    display:inline-block;
+    font-size:12px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--accent); font-weight:700;
+    margin-bottom:18px;
+  }
+
+  .svc-hero{text-align:center;}
+  .svc-hero h1{font-size:clamp(28px,4.4vw,40px); font-weight:800; max-width:22ch; margin:0 auto; line-height:1.15;}
+  .svc-hero .lead{
+    margin-top:16px; color:var(--ink-dim); font-size:17px; max-width:52ch; margin-inline:auto; line-height:1.6;
+  }
+  .svc-hero .price{
+    margin-top:22px; display:flex; align-items:baseline; gap:6px; flex-wrap:wrap;
+    justify-content:center; opacity:.85;
+  }
+  .svc-hero .price .amount{font-weight:700; font-size:13px; color:var(--ink-dim);}
+  .svc-hero .price .note{color:var(--ink-faint); font-size:12px;}
+
+  .svc-hero-image{
+    margin:32px auto 0; max-width:640px; width:100%; aspect-ratio:16/9;
+    border:1px dashed var(--glass-border); border-radius:14px;
+    background:var(--glass);
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
+    color:var(--ink-faint); font-size:13px; text-align:center; padding:16px;
+  }
+  .svc-hero-image span.hint{color:var(--ink-faint); font-size:12px; max-width:32ch;}
+
+  .svc-cta-btn{
+    margin-top:26px;
+    display:inline-block; background:var(--accent); color:#04120E;
+    font-weight:700; font-size:15px;
+    border:none; padding:13px 26px; border-radius:8px; cursor:pointer;
+    transition:opacity .15s;
+  }
+  .svc-cta-btn:hover{opacity:.88;}
+
+  .svc-media-slot{
+    margin-top:22px; width:100%; max-width:400px; aspect-ratio:16/10;
+    border:1px dashed var(--glass-border); border-radius:12px;
+    background:var(--glass);
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
+    color:var(--ink-faint); font-size:12.5px; text-align:center; padding:14px;
+  }
+
+  .svc-divider{height:1px; background:var(--glass-border); margin-block:52px; border:none;}
+
+  .svc-section-label{
+    font-size:12.5px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--ink-faint); margin-bottom:22px; font-weight:700;
+  }
+
+  .svc-includes{display:grid; gap:0; border-top:1px solid var(--glass-border); list-style:none; margin:0; padding:0;}
+  .svc-includes li{
+    display:flex; gap:16px; align-items:flex-start;
+    padding-block:18px;
+    border-bottom:1px solid var(--glass-border);
+  }
+  .svc-includes svg{flex-shrink:0; margin-top:3px;}
+  .svc-includes .t{font-weight:700; font-size:15.5px;}
+  .svc-includes .d{color:var(--ink-dim); font-size:14.5px; margin-top:3px; line-height:1.55;}
+
+  .svc-fit-note{
+    border-left:2px solid var(--accent);
+    padding-left:18px;
+    color:var(--ink-dim);
+    font-size:15px; line-height:1.6;
+    margin-top:28px;
+  }
+  .svc-fit-note strong{color:var(--ink); font-weight:700;}
+
+  .svc-process{display:grid; grid-template-columns:repeat(auto-fit, minmax(190px,1fr)); gap:32px 20px;}
+  .svc-step{position:relative; padding-right:20px;}
+  .svc-step-num{
+    position:relative; z-index:1;
+    width:44px; height:44px; border-radius:50%;
+    background:var(--bg);
+    border:1px solid var(--glass-border);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--accent);
+    margin-bottom:20px;
+  }
+  .svc-step h3{font-size:16px; font-weight:700; margin:0 0 8px;}
+  .svc-step p{color:var(--ink-dim); font-size:14px; margin:0; line-height:1.55;}
+  .svc-step .idx{
+    position:absolute; top:-6px; right:0;
+    font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--ink-faint);
+  }
+
+  .svc-case{border-left:2px solid var(--accent); padding-left:24px;}
+  .svc-case .client{font-weight:700; font-size:18px; margin-bottom:10px;}
+  .svc-case .work{color:var(--ink-dim); font-size:15.5px; max-width:56ch; line-height:1.6; margin:0;}
+  .svc-case .honest-tag{
+    display:inline-block; margin-top:14px;
+    font-size:11.5px; letter-spacing:.05em; text-transform:uppercase;
+    color:var(--pending); border:1px solid var(--pending-soft);
+    background:var(--pending-soft);
+    padding:4px 10px; border-radius:6px;
+  }
+  .svc-reel-slot{margin-top:22px; display:flex; align-items:center; gap:16px; flex-wrap:wrap;}
+  .svc-reel-placeholder{
+    width:110px; aspect-ratio:9/16;
+    border:1px dashed var(--glass-border); border-radius:12px;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
+    color:var(--ink-faint); font-size:11px; text-align:center; padding:8px;
+  }
+  .svc-views-tag{
+    font-size:13px; color:var(--ink-dim);
+    border:1px solid var(--glass-border); border-radius:20px;
+    padding:5px 12px;
+  }
+
+  .svc-form-panel{
+    background:var(--glass); border:1px solid var(--glass-border);
+    border-radius:16px; padding:36px;
+  }
+  .svc-form-panel h2{font-size:22px; font-weight:800; margin:0;}
+  .svc-form-panel .sub{color:var(--ink-dim); font-size:14.5px; margin-top:10px; max-width:48ch; line-height:1.55;}
+  .svc-form-panel form{margin-top:30px; display:grid; gap:20px;}
+  .svc-row2{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  .svc-form-panel label{
+    display:block; font-size:12.5px; letter-spacing:.02em;
+    color:var(--ink-dim); margin-bottom:8px; font-weight:700;
+  }
+  .svc-form-panel input, .svc-form-panel select, .svc-form-panel textarea{
+    width:100%; background:var(--glass-strong); border:1px solid var(--glass-border);
+    color:var(--ink); font-family:inherit; font-size:14.5px;
+    padding:12px 14px; border-radius:8px; outline:none;
+    transition:border-color .15s;
+  }
+  .svc-form-panel input:focus, .svc-form-panel select:focus, .svc-form-panel textarea:focus{border-color:var(--accent);}
+  .svc-form-panel textarea{resize:vertical; min-height:90px;}
+  .svc-form-panel fieldset{border:none; padding:0; margin:0;}
+  .svc-radio-group{display:flex; gap:10px; flex-wrap:wrap;}
+  .svc-radio-opt{
+    border:1px solid var(--glass-border); border-radius:8px;
+    padding:10px 14px; font-size:13.5px; color:var(--ink-dim);
+    cursor:pointer; transition:all .15s; user-select:none;
+  }
+  .svc-radio-opt input{position:absolute; opacity:0; width:0; height:0;}
+  .svc-radio-opt:has(input:checked){border-color:var(--accent); color:var(--ink); background:var(--accent-soft);}
+  .svc-form-panel button[type="submit"]{
+    background:var(--accent); color:#04120E; border:none;
+    font-weight:700; font-size:15px;
+    padding:14px 22px; border-radius:8px; cursor:pointer;
+    justify-self:start; transition:opacity .15s;
+  }
+  .svc-form-panel button[type="submit"]:disabled{opacity:.5; cursor:default;}
+  .svc-form-panel button[type="submit"]:hover:not(:disabled){opacity:.88;}
+  .svc-form-note{color:var(--ink-faint); font-size:12px; margin-top:-6px;}
+  .svc-confirm{display:none; border-left:2px solid var(--accent); padding-left:18px; color:var(--ink-dim); font-size:14.5px;}
+  .svc-confirm.show{display:block;}
+  .svc-confirm strong{color:var(--ink); font-weight:700;}
+  .svc-error{display:none; border-left:2px solid #E85B4B; padding-left:18px; color:var(--ink-dim); font-size:14.5px;}
+  .svc-error.show{display:block;}
+
+  @media (max-width:640px){
+    .svc-row2{grid-template-columns:1fr;}
+    .svc-process{grid-template-columns:1fr 1fr; row-gap:36px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="navwrap">
+  <nav class="nav glass" id="nav">
+    <a class="logo" href="/" style="text-decoration:none;">NARAN</a>
+    <div class="links">
+      <a href="/servicios/social-media/" class="active">Social Media</a>
+      <a href="/servicios/web-shopify/">Web & Shopify</a>
+      <a href="/servicios/cro/">CRO</a>
+      <a href="/servicios/paid-media/">Paid Media</a>
+      <a href="/servicios/growth-system/">Growth System</a>
+    </div>
+    <a class="cta" href="/#contacto">Hablemos</a>
+  </nav>
+</div>
+
+<div class="svc-shell svc-page">
+  <div class="svc-hero">
+    <span class="svc-eyebrow">01 · Social Media Management</span>
+    <h1>Gestión de redes sociales</h1>
+    <p class="lead">Gestión y producción de contenido para tus redes: calendario, guion, dirección creativa y publicación, bajo una misma estrategia con objetivos definidos.</p>
+    <div class="price"><span class="amount">A partir de: 500€/mes</span><span class="note">menos si se añade a otro servicio activo con nosotros</span></div>
+    <button class="svc-cta-btn" onclick="scrollToForm()">Ver si encajamos</button>
+    <div class="svc-hero-image">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00C9A7" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5-9 9"/></svg>
+      <span>Espacio para imagen</span>
+      <span class="hint">Foto real de Pau, el equipo o trabajo en curso</span>
+    </div>
+  </div>
+
+  <hr class="svc-divider">
+
+  <div class="svc-section-label">Qué incluye</div>
+  <ul class="svc-includes">
+      <li>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C9A7" stroke-width="1.6"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 3v3M16 3v3"/></svg>
+        <div><div class="t">Calendario de contenido</div><div class="d">Planificación mensual por plataforma, no publicaciones improvisadas</div></div>
+      </li>
+      <li>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C9A7" stroke-width="1.6"><path d="M14 3l7 7-11 11H3v-7z"/></svg>
+        <div><div class="t">Guion y dirección creativa</div><div class="d">Escribimos y dirigimos los Reels y TikToks, no solo editamos lo que ya grabasteis</div></div>
+      </li>
+      <li>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C9A7" stroke-width="1.6"><path d="M3 3v18h18M7 15l4-5 3 3 5-7"/></svg>
+        <div><div class="t">Reporting mensual</div><div class="d">Qué ha funcionado, qué no, y qué cambia el mes siguiente</div></div>
+      </li>
+      <li>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C9A7" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg>
+        <div><div class="t">Gestión de creadores</div><div class="d">Cuando el proyecto lo requiere, coordinamos creadores externos</div></div>
+      </li>
+  </ul>
+
+  <hr class="svc-divider">
+
+  <div class="svc-section-label">Cómo lo hacemos</div>
+  <div class="svc-process">
+      <div class="svc-step"><span class="idx">01</span>
+        <div class="svc-step-num"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg></div>
+        <h3>Reunión</h3><p>Identificamos objetivos y analizamos la competencia</p>
+      </div>
+      <div class="svc-step"><span class="idx">02</span>
+        <div class="svc-step-num"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <h3>Estrategia</h3><p>Línea editorial, formatos y calendario mensual</p>
+      </div>
+      <div class="svc-step"><span class="idx">03</span>
+        <div class="svc-step-num"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3l7 7-11 11H3v-7z"/></svg></div>
+        <h3>Guion y dirección creativa</h3><p>Escribimos y dirigimos cada pieza antes de grabar</p>
+      </div>
+      <div class="svc-step"><span class="idx">04</span>
+        <div class="svc-step-num"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18M8 17V10M13 17V6M18 17v-4"/></svg></div>
+        <h3>Análisis y reporting</h3><p>Revisamos el rendimiento real de lo publicado y qué cambia el mes siguiente</p>
+      </div>
+      <div class="svc-step"><span class="idx">05</span>
+        <div class="svc-step-num"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3"/><path d="M2 20v-1a6 6 0 0112 0v1M16 4a3 3 0 010 6M22 20v-1a5 5 0 00-4-5"/></svg></div>
+        <h3>Gestión de creadores</h3><p>Cuando el proyecto lo requiere, coordinamos creadores externos</p>
+      </div>
+  </div>
+
+  <hr class="svc-divider">
+
+  <div class="svc-section-label">Caso</div>
+  <div class="svc-case">
+    <div class="client">LaShop By Berta</div>
+    <p class="work">Moda femenina premium. Escribimos y dirigimos los guiones de sus Reels e Instagram, actuando como dirección creativa del contenido de marca. Trabajo recurrente, mismo formato en una tienda especializada de vinos.</p>
+      <div class="svc-reel-slot">
+        <div class="svc-reel-placeholder">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00C9A7" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 8l7 4-7 4z"/></svg>
+          <span>Espacio para el Reel</span>
+        </div>
+        <span class="svc-views-tag">— visitas</span>
+      </div>
+  </div>
+
+  <hr class="svc-divider">
+
+    <div class="svc-form-panel">
+      <h2>¿Encajamos?</h2>
+      <p class="sub">Antes de escribirnos, esto nos ayuda a saber si tiene sentido hablar. Respondemos en 24-48h laborables.</p>
+      <form name="servicio-social-media" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return svcHandleSubmit(event, this)">
+        <input type="hidden" name="form-name" value="servicio-social-media">
+        <p style="display:none;"><label>No rellenes esto si eres humano: <input name="bot-field"></label></p>
+        <div class="svc-row2">
+          <div><label>Nombre</label><input type="text" name="nombre" required></div>
+          <div><label>Apellido</label><input type="text" name="apellido" required></div>
+        </div>
+        <div class="svc-row2">
+          <div><label>Web o red social</label><input type="text" name="web" placeholder="https:// o @usuario" required></div>
+          <div><label>Email o teléfono</label><input type="text" name="contacto" required></div>
+        </div>
+        <div>
+          <label>Facturación mensual del negocio</label>
+          <select name="facturacion" required>
+            <option value="" disabled selected>Selecciona un rango</option>
+            <option value="menos-30k">Menos de 30.000€</option>
+            <option value="30k-100k">30.000€ - 100.000€</option>
+            <option value="100k-300k">100.000€ - 300.000€</option>
+            <option value="mas-300k">Más de 300.000€</option>
+          </select>
+        </div>
+        <div>
+          <label>¿Buscas algo puntual o un proceso de varios meses?</label>
+          <fieldset class="svc-radio-group">
+            <label class="svc-radio-opt"><input type="radio" name="compromiso" value="puntual" required>Un proyecto puntual</label>
+            <label class="svc-radio-opt"><input type="radio" name="compromiso" value="proceso">Un proceso a medio plazo</label>
+          </fieldset>
+        </div>
+        <div>
+          <label>Cuéntanos brevemente qué necesitas</label>
+          <textarea name="mensaje" placeholder="Contexto del negocio, qué buscáis conseguir..."></textarea>
+        </div>
+        <p class="svc-form-note">Servicio: Social Media Management</p>
+        <button type="submit">Enviar solicitud</button>
+        <div class="svc-confirm"><strong>Recibido.</strong> Te contestamos en 24-48h laborables.</div>
+        <div class="svc-error"><strong>Algo ha fallado.</strong> Escríbenos directamente a <a href="mailto:growbemarketingthings@gmail.com" style="color:var(--accent);">growbemarketingthings@gmail.com</a>.</div>
+      </form>
+    </div>
+
+</div>
+<footer class="shell">
+  <div class="foot-bar glass">
+    <span class="foot-copy">© 2026 NARAN · Todos los derechos reservados</span>
+    <span class="foot-logo">NARAN</span>
+    <div class="foot-social">
+      <a href="#" aria-label="LinkedIn">in</a>
+      <a href="#" aria-label="Instagram">◎</a>
+      <a href="mailto:growbemarketingthings@gmail.com" aria-label="Email">@</a>
+    </div>
+  </div>
+  <div class="foot-policies">
+    <a href="#">Políticas de privacidad</a><span class="sep">|</span><a href="#">Cookie Settings</a>
+  </div>
+</footer>
+<script>
+  function scrollToForm(){
+    const panel = document.querySelector('.svc-form-panel');
+    if(panel) panel.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function svcHandleSubmit(e, form){
+    e.preventDefault();
+    const data = new FormData(form);
+    const confirmEl = form.querySelector('.svc-confirm');
+    const errorEl = form.querySelector('.svc-error');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    fetch('/', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: new URLSearchParams(data).toString()
+    }).then(() => {
+      confirmEl.classList.add('show');
+      form.querySelectorAll('input,select,textarea').forEach(el => el.disabled = true);
+    }).catch(() => {
+      errorEl.classList.add('show');
+      submitBtn.disabled = false;
+    });
+    return false;
+  }
+</script>
+</body>
+</html>
