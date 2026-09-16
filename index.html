@@ -98,6 +98,16 @@ a { color: inherit; }
   padding: 5px 11px;
   border-radius: 100px;
 }
+.badge.tag.stat {
+  font-family: 'Inter', ui-sans-serif, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -.01em;
+  text-transform: none;
+  padding: 7px 14px 7px 12px;
+  color: var(--ink-dim);
+}
+.badge.tag.stat::before { width: 7px; height: 7px; }
 .badge.tag {
   color: var(--accent);
   background: var(--accent-soft);
@@ -748,10 +758,10 @@ footer { padding: 0 0 64px; position: relative; z-index: 1; }
 <!-- ── HERO ── -->
 <div class="shell hero">
   <div class="hero-badges">
-    <span class="badge tag">Agencia de marketing digital</span>
+    <span class="badge tag stat">85% de nuestros clientes llevan +3 años con nosotros</span>
   </div>
-  <h1>Servicios de marketing<br>que obtienen resultados<span class="accent">.</span></h1>
-  <p class="hero-sub">Gestionamos tu marketing de principio a fin para que tú puedas centrarte en lo que mejor haces: hacer crecer tu negocio.</p>
+  <h1>Impulsa las ventas y la notoriedad<br>de tu negocio con NARAN<span class="accent">.</span></h1>
+  <p class="hero-sub">Nos obsesionamos con que a nuestros clientes les vaya bien. Cuidamos cada detalle de la estrategia, ejecutamos con calidad y hacemos seguimiento constante de los resultados.</p>
   <div class="hero-ctas">
     <a class="btn solid" href="#contacto">Hablemos</a>
     <a class="btn ghost" href="#servicios">Ver servicios</a>
