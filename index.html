@@ -98,6 +98,16 @@ a { color: inherit; }
   padding: 5px 11px;
   border-radius: 100px;
 }
+.badge.tag.stat {
+  font-family: 'Inter', ui-sans-serif, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -.01em;
+  text-transform: none;
+  padding: 7px 14px 7px 12px;
+  color: var(--ink-dim);
+}
+.badge.tag.stat::before { width: 7px; height: 7px; }
 .badge.tag {
   color: var(--accent);
   background: var(--accent-soft);
@@ -378,6 +388,9 @@ a { color: inherit; }
   padding: 20px;
   display: flex;
   flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
   transition: transform .32s cubic-bezier(.16,1,.3,1), box-shadow .32s ease;
 }
 .svc-card:hover {
@@ -745,10 +758,10 @@ footer { padding: 0 0 64px; position: relative; z-index: 1; }
 <!-- ── HERO ── -->
 <div class="shell hero">
   <div class="hero-badges">
-    <span class="badge tag">Agencia de marketing digital</span>
+    <span class="badge tag stat">85% de nuestros clientes llevan +3 años con nosotros</span>
   </div>
-  <h1>Servicios de marketing<br>que obtienen resultados<span class="accent">.</span></h1>
-  <p class="hero-sub">Gestionamos tu marketing de principio a fin para que tú puedas centrarte en lo que mejor haces: hacer crecer tu negocio.</p>
+  <h1>Impulsa las ventas y la notoriedad<br>de tu negocio con NARAN<span class="accent">.</span></h1>
+  <p class="hero-sub">Nos obsesionamos con que a nuestros clientes les vaya bien. Cuidamos cada detalle de la estrategia, ejecutamos con calidad y hacemos seguimiento constante de los resultados.</p>
   <div class="hero-ctas">
     <a class="btn solid" href="#contacto">Hablemos</a>
     <a class="btn ghost" href="#servicios">Ver servicios</a>
@@ -779,7 +792,7 @@ footer { padding: 0 0 64px; position: relative; z-index: 1; }
   </div>
 
   <div class="svc-row-2">
-    <div class="svc-card glass sr-left">
+    <a class="svc-card glass sr-left" href="/servicios/social-media/">
       <div class="svc-panel lg ig-panel">
         <svg class="smm-hub" viewBox="0 0 500 210" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" overflow="visible">
           <defs>
@@ -962,9 +975,9 @@ footer { padding: 0 0 64px; position: relative; z-index: 1; }
       <h3>Social Media Management</h3>
       <p>Pensamos la estrategia, planificamos el contenido, grabamos, editamos y publicamos por ti. Después medimos los resultados para que todo apunte al mismo objetivo.</p>
       <span class="svc-link">Ver servicio →</span>
-    </div>
+    </a>
 
-    <div class="svc-card glass sr-right">
+    <a class="svc-card glass sr-right" href="/servicios/web-shopify/">
       <div class="svc-panel lg">
         <div class="browser">
           <div class="bar"><span></span><span></span><span></span></div>
@@ -980,11 +993,11 @@ footer { padding: 0 0 64px; position: relative; z-index: 1; }
       <h3>Diseño Web &amp; Shopify</h3>
       <p>Webs y tiendas construidas desde cero con código, nada de plantillas rápidas. Bonitas y, sobre todo, preparadas para vender.</p>
       <span class="svc-link">Ver servicio →</span>
-    </div>
+    </a>
   </div>
 
   <div class="svc-row-4" style="margin-top:14px;">
-    <div class="svc-card glass sr" style="--d:.04s">
+    <a class="svc-card glass sr" style="--d:.04s" href="/servicios/cro/">
       <div class="svc-panel">
         <svg class="lines" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="26" y1="85" x2="50" y2="50"/><line x1="44" y1="78" x2="50" y2="50"/><line x1="62" y1="71" x2="50" y2="50"/></svg>
         <div class="dot" style="bottom:38px;left:26%;animation-delay:0s;"></div>
@@ -998,9 +1011,9 @@ footer { padding: 0 0 64px; position: relative; z-index: 1; }
       <h3>Optimización &amp; CRO</h3>
       <p>Analizamos tu tienda online y la optimizamos para conseguir los mejores resultados con el mismo tráfico.</p>
       <span class="svc-link">Ver servicio →</span>
-    </div>
+    </a>
 
-    <div class="svc-card glass sr" style="--d:.09s">
+    <a class="svc-card glass sr" style="--d:.09s" href="/servicios/paid-media/">
       <div class="svc-panel">
         <div class="ring" style="width:80px;height:80px;"></div>
         <div class="ring" style="width:110px;height:110px;"></div>
@@ -1011,9 +1024,9 @@ footer { padding: 0 0 64px; position: relative; z-index: 1; }
       <h3>Paid Media</h3>
       <p>Campañas y embudos en Meta Ads y Google Ads, con creativos pensados para convertir.</p>
       <span class="svc-link">Ver servicio →</span>
-    </div>
+    </a>
 
-    <div class="svc-card glass sr" style="--d:.14s">
+    <a class="svc-card glass sr" style="--d:.14s" href="/servicios/growth-system/">
       <div class="svc-panel">
         <svg class="lines" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="20" y1="11" x2="50" y2="50"/><line x1="78" y1="90" x2="50" y2="50"/></svg>
         <div class="ring" style="width:90px;height:90px;"></div>
@@ -1026,7 +1039,7 @@ footer { padding: 0 0 64px; position: relative; z-index: 1; }
       <h3>Growth System</h3>
       <p>Dirección de marketing externa: equipo y estrategia llevando todas las palancas activas a la vez.</p>
       <span class="svc-link">Ver servicio →</span>
-    </div>
+    </a>
   </div>
 </div>
 
