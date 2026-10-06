@@ -17,3 +17,35 @@
   for = "/assets/*.jpg"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# Rediseño 2026: las páginas de servicio cambian de dirección.
+# Redirecciones permanentes para no perder posicionamiento ni enlaces antiguos.
+[[redirects]]
+  from = "/servicios/cro/*"
+  to = "/servicios/optimizacion-cro.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/servicios/growth-system/*"
+  to = "/servicios/growth-system.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/servicios/paid-media/*"
+  to = "/servicios/paid-media-funnels.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/servicios/social-media/*"
+  to = "/servicios/social-media-management.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/servicios/web-shopify/*"
+  to = "/servicios/diseno-web-shopify.html"
+  status = 301
+  force = true
