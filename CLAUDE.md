@@ -2,31 +2,41 @@
 
 ## Qué es este proyecto
 
-Web de una sola página para **NARAN**, agencia de marketing digital. Es un único archivo `index.html` autocontenido (CSS y JS inline). Sin frameworks, sin build tools. Se abre directamente en el navegador.
+Web de **NARAN**, agencia de marketing digital en Barcelona: una home y 5 páginas de servicio. HTML + CSS + JS puro, sin frameworks ni build tools.
 
-Está desplegada en: https://naranagency.netlify.app
+Dominio: https://naranagency.com (Netlify, también en https://naranagency.netlify.app)
 
 ## Stack
 
-- HTML + CSS + JS puro, todo en `index.html`
-- Animaciones: SVG SMIL (`animateMotion`, `animate`) + CSS keyframes
-- Analytics: OpenPanel (snippet en el `<head>`, clientId ya configurado)
+- HTML por página; estilos compartidos en `assets/css/naran.css` (los tokens de diseño están en `:root`) y estilos propios de cada página inline en su `<style>`
+- Motor de animación compartido: `assets/js/naran.js` (las páginas se enganchan con `NARAN.ready(fn)`)
+- Librerías locales en `assets/js/vendor/`: GSAP, ScrollTrigger, SplitText y Lenis (scroll suave solo en escritorio)
+- Tipografía Inter alojada en local (`assets/fonts/`)
+- Analytics: OpenPanel (snippet en el `<head>` de cada página, clientId ya configurado)
+- SEO: `robots.txt`, `sitemap.xml`, canonical y Open Graph en cada página
 - Hosting: Netlify (conectado a GitHub, auto-deploy en cada merge a `main`)
 - Repositorio: https://github.com/lluisllinaresgarreta/naranagency.com
 
 ## Estructura de archivos
 
 ```
-naranagency/
-├── index.html          ← toda la web aquí
+naranagency.com/
+├── index.html                  ← home
+├── servicios/
+│   ├── social-media-management.html
+│   ├── diseno-web-shopify.html
+│   ├── optimizacion-cro.html
+│   ├── paid-media-funnels.html
+│   └── growth-system.html
 ├── assets/
-│   ├── tiktok.webp
-│   ├── Instagram_icon.png.webp
-│   ├── emojisenyora2.png
-│   ├── emojisenyorros.png
-│   ├── emojisenyora.png
-│   └── emojinenros.png
-├── netlify.toml
+│   ├── css/naran.css           ← design system compartido
+│   ├── js/naran.js             ← animaciones compartidas
+│   ├── js/vendor/              ← GSAP, ScrollTrigger, SplitText, Lenis
+│   ├── fonts/                  ← Inter (woff2)
+│   ├── video/ covers/ videos/ clients/
+├── robots.txt
+├── sitemap.xml                 ← actualizar si se añade o renombra una página
+├── netlify.toml                ← cabeceras + redirecciones 301 de las URLs antiguas
 └── CLAUDE.md
 ```
 
@@ -41,9 +51,9 @@ git checkout main
 git pull origin main
 git checkout -b feature/nombre-descriptivo
 
-# 2. Hacer los cambios en index.html (o assets/)
+# 2. Hacer los cambios en las páginas HTML o en assets/
 
-# 3. Probar en local abriendo index.html en el navegador
+# 3. Probar en local con un servidor: python3 -m http.server 8080
 
 # 4. Antes de crear el PR, sincronizar con main por si alguien mergeó algo
 git fetch origin
@@ -64,23 +74,15 @@ Netlify genera una **preview URL** automática para cada PR — úsala para revi
 
 ## Reglas de código
 
-- No tocar el `index.html` directamente en main — siempre rama + PR
+- No tocar nada directamente en main — siempre rama + PR
 - No inventar datos del negocio (servicios, precios, contacto) — usar solo datos reales
 - Si se necesitan imágenes o assets nuevos (logos, emojis, fotos), **pedírselos al usuario** antes de intentar recrearlos con código
-- No añadir dependencias externas salvo Google Fonts (ya incluido)
-- Mantener todo en el único `index.html` — no crear archivos JS o CSS separados
-
-## Animación SMM (Social Media Management card)
-
-La tarjeta de Social Media tiene una animación SVG compleja:
-- 5 avatares con emojis Apple entran desde la izquierda por caminos bezier (ap1–ap5)
-- Pasan por el logo central (Instagram / TikTok, alternando cada 5s)
-- Salen como tarjetas de notificación hacia la derecha
-- Los emojis y caminos se **aleatorizan con JS** en cada carga y cada 6s
-- Los logos usan imágenes reales de `assets/` — no SVG a mano
+- No añadir dependencias externas: las librerías van en `assets/js/vendor/`
+- Usar los tokens de `:root` en `naran.css` para colores, radios y sombras; no meter colores sueltos nuevos
+- Respetar `prefers-reduced-motion`: toda animación nueva debe pasar por `NARAN.reduced`
 
 ## Deploy
 
 Netlify está conectado a GitHub. **No usar `npx netlify deploy` manualmente** — el deploy ocurre solo al mergear a `main`.
 
-Para preview local: abrir `index.html` directamente en el navegador.
+Para preview local: `python3 -m http.server 8080` en la raíz y abrir http://localhost:8080 (los vídeos y fuentes no cargan bien abriendo el archivo directamente).
